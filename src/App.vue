@@ -3,7 +3,7 @@ import 'normalize.css'
 </script>
 
 <template>
- hello
+  hello
 </template>
 
 <style lang="scss">

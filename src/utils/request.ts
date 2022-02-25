@@ -8,33 +8,33 @@ import config from '../config'
 const service = axios.create({
   baseURL: config.baseApi,
   timeout: 8000
-});
+})
 
 //请求拦截
 service.interceptors.request.use((req: AxiosRequestConfig) => {
-  return req;
-});
+  return req
+})
 
 //响应拦截
 service.interceptors.response.use((res: AxiosResponse) => {
-  return res.data;
-});
+  return res.data
+})
 
 const request = (options: any) => {
-  options.method = options.method || 'get';
+  options.method = options.method || 'get'
   if (options.method.toLowerCase() === 'get') {
-    options.params = options.data;
+    options.params = options.data
   }
-  let isMock = config.mock;
+  let isMock = config.mock
   if (typeof options.mock != 'undefined') {
-    isMock = options.mock;
+    isMock = options.mock
   }
   if (config.env === 'prod') {
-    service.defaults.baseURL = config.baseApi;
+    service.defaults.baseURL = config.baseApi
   } else {
-    service.defaults.baseURL = isMock ? config.mockApi : config.baseApi;
+    service.defaults.baseURL = isMock ? config.mockApi : config.baseApi
   }
-  return service(options);
-};
+  return service(options)
+}
 
-export default request;
+export default request
