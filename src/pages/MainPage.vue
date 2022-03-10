@@ -10,6 +10,7 @@ import NavBar from '../components/NavBar.vue'
 <style lang="scss" scoped>
 .nav_bar {
   position: fixed;
+  top: 0;
 }
 .main_content {
   margin-left: 80px;

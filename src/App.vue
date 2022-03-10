@@ -16,5 +16,10 @@ const { themeOverrides } = useColorOverrides()
 </template>
 
 <style lang="scss">
-@import './assets/root.scss';
+@import "./assets/root.scss";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 </style>
